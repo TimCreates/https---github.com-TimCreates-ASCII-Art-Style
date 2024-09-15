@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Calculator</title>
+    <!-- Link to the CSS file in the static folder -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Grade Calculator</h1>
+    <form method="post" action="{{ url_for('index') }}">
+        <label for="prelim_grade">Prelim Grade:</label>
+        <input type="number" id="prelim_grade" name="prelim_grade" min="0" max="100" placeholder="Enter Prelim Grade" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if result %}
+        <p class="result">{{ result }}</p>
+    {% endif %}
+
+    {% if midterm is defined and final is defined %}
+        <p>Required Midterm Grade: {{ midterm }}</p>
+        <p>Required Final Grade: {{ final }}</p>
+    {% endif %}
+</body>
+</html>
