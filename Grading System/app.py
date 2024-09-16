@@ -8,8 +8,8 @@ def calculate_required_grades(prelim):
         if prelim < 0 or prelim > 100:
             return "Invalid input. Prelim grade should be between 0 and 100."
         
-        # Assuming passing grade is 60
-        passing_grade = 60
+        # Assuming passing grade is 75
+        passing_grade = 75
         
         # Calculate required average for midterm and finals
         required_average = (3 * passing_grade - prelim) / 2
